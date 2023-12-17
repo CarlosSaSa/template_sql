@@ -1,0 +1,16 @@
+{
+    "tables": [
+        { "name": "tb_usuario", 
+          "audit": "true",
+          "columns": [
+            { "name": "usuario_id", "type": "identity", "required": true, "primaryKey": true, "identity": true },
+            { "name": "usuario_nombre", "type": "string", "maxlength": 20, "required": true },
+            { "name": "usuario_apellido_paterno", "type": "string", "maxlength": 20, "required": true },
+            { "name": "usuario_apellido_materno", "type": "string", "maxlength": 20, "required": true },
+            { "name": "usuario_is_admin", "type": "bool", "required": true },
+            { "name": "rol_id", "type": "int", "required": true ,"isFk": true, "dependsOn": "ct_rol" },
+            { "name": "estatus_id", "type": "int", "required": true ,"isFk": true, "dependsOn": "ct_estatus" }
+        ] 
+        }
+    ]
+}
